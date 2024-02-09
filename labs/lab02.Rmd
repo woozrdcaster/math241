@@ -17,13 +17,23 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 # I got you started!
 # The first time you want to install the dsbox package; then you can comment it out.
 # If you have not installed the devtools package, you will need to do so first
-# install.packages("devtools")
-# library(devtools)
+#install.packages("devtools")
+#library(devtools)
 
-devtools::install_github("tidyverse/dsbox")
+
+#devtools::install_github("tidyverse/dsbox")
 library(dsbox)
+install.packages("styler")
+library(styler)
 library(tidyverse)
 library(viridis)
+data(accidents)
+library(magrittr)
+#data(mpg)
+#view(mpg)
+#?mpg
+#?accidents
+#view(accidents)
 ```
 
 
@@ -57,17 +67,258 @@ knitr::include_graphics("../img/edi-accidents-1.png")
 ```
 
 
+```{r}
+#mutating weekend variable
+accidents <- mutate(accidents, weekend = ifelse(day_of_week %in% c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday"), "weekday", "weekend"))
+
+#wrangling
+slight_accidents <- accidents %>%
+  filter(severity == "Slight")
+
+serious_accidents <- accidents %>%
+  filter(severity == "Serious")
+
+fatal_accidents <- accidents %>%
+  filter(severity == "Fatal")
+
+
+
+#plotting
+
+accident_plot <- ggplot(data = slight_accidents, aes(x = time)
+                       ) +
+  geom_density(fill = "yellow", alpha = 0.3
+               ) +
+  geom_density(data = serious_accidents, fill = "blue", alpha = 0.3
+               ) +
+  geom_density(data = fatal_accidents, fill = "purple", alpha = 0.3
+               ) +
+  xlab("Time of day"
+       ) +
+  facet_wrap(~weekend, nrow = 2
+             )
+  
+
+
+accident_plot
+#could not figure out how to add a legend
+
+
+```
+##Interpretation
+
+The first thing that strikes me is that there are no fatal accidents observed on weekends, this could be due to the fact that someone is less likely to be in a rush while driving or to be distracted because many people do not work on the weekend (by the same toke n there are likely to be fewer cars on the road).
+The second thing I  notice is that accidents seem to peak around 4pm, this makes sense as that is traditionally rush hours where the most people in the biggest rush are on the road. This trend also holds true on the weekend which makes sense because many people still do work weekends.
+
+
+
+##my first approach
+
+#weekday wrangling
+accidents_weekday <- accidents %>%
+  filter(day_of_week %in% c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday"))
+
+slight_accidents_weekday <- accidents_weekday %>%
+  filter(severity == "Slight")
+
+serious_accidents_weekday <- accidents_weekday %>%
+  filter(severity == "Serious")
+
+fatal_accidents_weekday <- accidents_weekday %>%
+  filter(severity == "Fatal")
+
+
+#weekend wrangling
+accidents_weekend <- accidents %>%
+  filter(day_of_week %in% c("Saturday", "Sunday"))
+
+slight_accidents_weekend <- accidents_weekend %>%
+  filter(severity == "Slight")
+
+serious_accidents_weekend <- accidents_weekend %>%
+  filter(severity == "Serious")
+
+fatal_accidents_weekend <- accidents_weekend %>%
+  filter(severity == "Fatal")
+
+
+
+#weekday plots
+weekday_plot <- ggplot(data = slight_accidents_weekday, aes(x = time)
+                       ) +
+  geom_density(fill = "yellow", alpha = 0.3
+               ) +
+  geom_density(data = serious_accidents_weekday, fill = "blue", alpha = 0.3
+               )+
+  geom_density(data = fatal_accidents_weekday, fill = "purple", alpha = 0.3)
+
+
+weekday_plot
+
+
+
+
+#weekend plots
+weekday_plot <- ggplot(data = slight_accidents_weekend, aes(x = time)
+                       ) +
+  geom_density(fill = "yellow", alpha = 0.3
+               ) +
+  geom_density(data = serious_accidents_weekend, fill = "blue", alpha = 0.3
+               )+
+  geom_density(data = fatal_accidents_weekend, fill = "purple", alpha = 0.3)
+
+
+weekday_plot
+
+
+
+
+
+
+
+
+
 ### Problem 2: One Dataset, Visualized ~~25~~ 5 Ways
+
+##using this: https://abcnews.go.com/Health/1500-americans-dying-covid-week/story?id=106237143
 
 Inspired by Nathan Yau's [One Dataset, Visualized 25 Ways](https://flowingdata.com/2017/01/24/one-dataset-visualized-25-ways/), I want you to create 5 visualizations of the same data. You can use the `mpg` dataset or another dataset of your choosing, including the `accidents` dataset above. Make sure you have the data manual open for this problem!  
 
 a. Pick 3 - 4 variables you want to explore.  Provide their code names here.
+  police
+  urban_rural
+  speed_limit
+  vehicle
+
 
 b. Create 5 graphs.  A few things to consider:
     + Like Nathan's graphs, they don't all have to contain every one of your selected variables.
     + You can't use the same `geom` for all four graphs but you can use the same `geom` more than once.
     + Think carefully about color, the coordinate system, and scales.
     + Feel free to subset or wrangling the dataset if you want to but it isn't required.
+
+##graphs
+
+graph a
+```{r}
+#wrangling
+
+  #figure out how to recode urban_rural to list "urban" or "rural" rather than 1 2 and apparently 3???
+#accidents <- accidents %>%
+  #mutate(accidents, urban_rural = ifelse(urban_rural = ifelse(urban_rural = 1) 'urban', 'rural'))
+
+accidents_police <- accidents %>%
+  filter(police == "Yes")
+
+accidents_no_police <- accidents %>%
+  filter(police == "No")
+
+
+#plotting
+
+a <- ggplot(data = accidents_police, aes(x = speed_limit)) + 
+      geom_density(fill = "red", alpha = 0.4
+                   ) + 
+      geom_density(data = accidents_no_police, fill = "blue", alpha = 0.4
+                   ) +
+      facet_wrap(~urban_rural, nrow = 2)
+
+
+
+
+
+a
+#Note: the density curve for accidents across speed limits is real interesting/funk and bears some investigation
+
+
+#Pros: 
+    #allows us to see if there is a trend relating speed limit to accident density (there is, a weird one)
+    #allows us to see if  there is a difference in police responsiveness relating to speed limit
+    #compares these trends across urban and rural environments
+
+#cons
+    #hard to glean precise understanding of trends, you i=only really see the shape
+    #doesn't control for conditions or vehicle count, which feel relavent
+```
+
+
+
+
+
+
+
+graph b
+```{r}
+accidents <- accidents %>%
+  filter(vehicles < 6)
+
+ggplot(data = accidents, aes(x = vehicles, fill = police)) +
+  geom_bar()
+#how do I choose what color is associated with what??
+
+#pros
+    #both b & c give a sense of the relative number of crashes across vehicle count
+    #shows trend of police response relative to vehicles involved
+
+#cons
+    #would need to make the bars equally sized to understand the true relative rates
+
+
+```
+
+
+
+graph c
+```{r}
+accidents <- accidents %>%
+  filter(vehicles < 6)
+
+# Convert urban_rural to factor
+#ChatGPT explained this, I was already trying to find a way using mutate() to reclass urban_rural as categorical with only two categories
+accidents$urban_rural <- factor(accidents$urban_rural)
+
+ggplot(data = accidents, aes(x = vehicles, fill = urban_rural)) +
+  geom_bar()
+
+
+#still don't know what the third category in urban_rural is
+
+
+#pros
+    #both b & c give a sense of the relative number of crashes across vehicle count
+    #shows trend of urban/rural environment relative to vehicles involved
+
+#cons
+    #would need to make the bars equally sized to understand the true relative rates
+
+
+
+```
+
+graph d
+```{r}
+
+
+accidents$urban_rural <- factor(accidents$urban_rural)
+
+ggplot(data = accidents, aes(x = urban_rural, fill = police)) +
+  geom_bar()
+
+
+#pros
+    #both b & c give a sense of the relative number of crashes across vehicle count
+    #shows trend of police response relative to urban/rural environment
+
+#cons
+    #would need to make the bars equally sized to understand the true relative rates
+    #I'd like to do this with one of these but I'm not sure which
+
+
+
+```
+
+
+
 
 c. Discuss the pros/cons of your graphs.  What useful information can be gleaned?  How do the different geoms and aesthetics impact the story?
 
