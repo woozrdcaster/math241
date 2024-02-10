@@ -19,17 +19,27 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 # If you have not installed the devtools package, you will need to do so first
 #install.packages("devtools")
 #library(devtools)
+#install.packages("tidyverse")
+#install.packages("viridis")
+#install.packages("lintr")
+#install.packages("datapasta")
+install.packages("tidytuesdayR")
 
 
 #devtools::install_github("tidyverse/dsbox")
 library(dsbox)
-install.packages("styler")
+#install.packages("styler")
 library(styler)
 library(tidyverse)
 library(viridis)
 data(accidents)
 library(magrittr)
-#data(mpg)
+data(mpg)
+library(lintr)
+data("elements-by-episode.df")
+library(tidytuesdayR)
+data("rent")
+#view(elements_by_episode.df)
 #view(mpg)
 #?mpg
 #?accidents
@@ -322,10 +332,50 @@ ggplot(data = accidents, aes(x = urban_rural, fill = police)) +
 
 c. Discuss the pros/cons of your graphs.  What useful information can be gleaned?  How do the different geoms and aesthetics impact the story?
 
+There seems to be a sin-wave form with reducing local maximums describing the relationship between accident density and speed limits, I don’t know what that is called or what it means. Police seem to respond most often at 20, 40, & 70 mph speed limits.
+Police seem to respond almost always to accidents involving 3+ cars.
+Accidents involving more than one vehicle make up a larger proportion of accidents in rural settings than in urban ones.
+Police appear to respond more consistently to crashes in rural environments.
+
+
+
 
 ### Problem 3: Style This Code!
 
 Take the following code and don't change its functionality but DO change its style.  Use the [Tidyverse Style Guide](https://style.tidyverse.org/)!
+
+```{r}
+
+# Creating the dataframe with the correct dimensions
+animal_data <- data.frame(
+  theanimalsweightisthisnumber = c(runif(3), NA), 
+  y = c("cat", "mouse", "dog", "rat")
+)
+
+# Mutating the dataframe to add 'animal_weight' column
+animal_data <- animal_data %>%
+  mutate(animal_weight = theanimalsweightisthisnumber) %>%
+  select(-theanimalsweightisthisnumber)  # Remove the column
+  view(animal_data)
+
+# Calculating median, mean, and variance
+median_val <- median(animal_data$animal_weight, na.rm = TRUE)
+mean_val <- mean(animal_data$animal_weight, na.rm = TRUE)
+variance_val <- var(animal_data$animal_weight, na.rm = TRUE)
+
+# Printing the results
+cat("Median:", median_val, "\n")
+cat("Mean:", mean_val, "\n")
+cat("Variance:", variance_val, "\n")
+
+# Plotting the data
+ggplot(animal_data, aes(y = animal_weight, x = y)) + 
+  geom_col() + 
+  scale_y_continuous()
+```
+
+
+
 
 ```{r}
 thing.132232=data.frame(theanimalsweightisthisnumber=c(runif(3),NA),y=c("cat","mouse","dog","rat"))
@@ -337,6 +387,8 @@ ggplot(thing.132232, aes(y=theanimalsweightisthisnumber,x=y))+geom_col()+scale_y
 
 
 
+
+
 ### Problem 4: Imitation is the Sincerest Form of Flattery
 
 For this problem, I want you to try to recreate a FiveThirtyEight.com graphic.  Awesomely, they share their data with the world [here](https://data.fivethirtyeight.com/).  (Note: You don't need to recreate all their branding/background color scheme.)
@@ -345,7 +397,13 @@ a. Take a screenshot of the graph, upload it to the same folder on the server wh
 
 
 ```{r, out.width="100%", echo=FALSE, eval = FALSE}
-knitr::include_graphics("../img/538_graph.png")
+knitr::include_graphics("C:/Users/agjjo/Zotero/storage/M3RMZ9LG/538_bob_ross_data.pdf")
+
+ave_elements_ross <- elements_by_episode.df
+
+data() %>% 
+  drop()
+
 ```
 
 
