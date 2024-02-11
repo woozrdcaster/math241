@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 #install.packages("viridis")
 #install.packages("lintr")
 #install.packages("datapasta")
-install.packages("tidytuesdayR")
+#install.packages("tidytuesdayR")
 
 
 #devtools::install_github("tidyverse/dsbox")
@@ -32,9 +32,9 @@ library(dsbox)
 library(styler)
 library(tidyverse)
 library(viridis)
-data(accidents)
+#data(accidents)
 library(magrittr)
-data(mpg)
+#data(mpg)
 library(lintr)
 data("elements-by-episode.df")
 library(tidytuesdayR)
@@ -409,7 +409,32 @@ data() %>%
 
 b. Load the data and recreate the graph as best as you can.  
 
+```{r}
+# Turning the elements_by_episode df into a tibble
+elem <- tibble::as_tibble(elements_by_episode)[,-2][,-1]
+
+# Taking the sums of all columns in the tibble
+sums <- colSums(elem)
+
+# Creating a data frame from the sums
+sums_bob_ross <- as.data.frame(sums, row.names = NULL, optional = FALSE)
+names(sums_bob_ross) <- "sums"  # Naming the column
+
+# Filtering out rows with a 'sums' value less than 5
+sums_bob_ross <- filter(sums_bob_ross, sums > 5) %>% mutate(prop = (sums / 381)*100)
+df_br <- as.data.frame(t(as.matrix(sums_bob_ross)))
+
+ggplot(data = sums_bob_ross, aes(y= sums)) + geom_col()
+
+# Plotting
+ggplot(sums_bob_ross, aes(x = factor(1), y = sums)) + 
+  geom_bar(stat = "identity")
+
+```
+
+
 c. Now make the graph better somehow.
+i think I would change the title to better reflect that each bar represents the pecentage of episodes in the show that each painted element appears inr
 
 d. Justify why your rendition of this `FiveThirtyEight.com` graph is more effective at telling the data story than the original. 
 
@@ -431,6 +456,8 @@ library(tidytuesdayR)
 tuesdata <- tidytuesdayR::tt_load('2022-07-05') # this could take a minute
 
 rent <- tuesdata$rent
+
+data(tuesdata)
 
 ```
 
