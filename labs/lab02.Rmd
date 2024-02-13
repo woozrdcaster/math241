@@ -418,18 +418,34 @@ sums <- colSums(elem)
 
 # Creating a data frame from the sums
 sums_bob_ross <- as.data.frame(sums, row.names = NULL, optional = FALSE)
-names(sums_bob_ross) <- "sums"  # Naming the column
+names(sums_bob_ross) <- "sums"  # Naming the column 
+#write.csv(sums_bob_ross, "bob.csv",row.names = TRUE)
+props <- read.csv("bob.csv")
 
-# Filtering out rows with a 'sums' value less than 5
-sums_bob_ross <- filter(sums_bob_ross, sums > 5) %>% mutate(prop = (sums / 381)*100)
-df_br <- as.data.frame(t(as.matrix(sums_bob_ross)))
+filtered_props <- props %>% 
+  filter(sums > 5)
 
-ggplot(data = sums_bob_ross, aes(y= sums)) + geom_col()
+filtered_props <- filtered_props %>%
+  arrange(sums)
 
-# Plotting
-ggplot(sums_bob_ross, aes(x = factor(1), y = sums)) + 
-  geom_bar(stat = "identity")
+# Filtering out rows with a 'sums' value less than 5 (this was done by the author)
+#props <- filter(sums > 5) %>% 
+#  mutate(prop = (sums / 381)*100)
+#df_br <- as.data.frame(t(as.matrix(props)))
 
+#plotting
+
+#ggplot(data = filtered_props, aes(y = X, x= prop)) + geom_point()
+
+#ggplot(data = sums_bob_ross, aes(y = factor(1), x = prop)) + geom_bar(stat = "identity")
+
+
+ggplot(filtered_props, aes(x = factor(X, levels = X[order(prop)]), y = prop)) + #dont know what "factor does" also I didn't know there was and "levels" & "order" adverb to arange data within a ggplot
+  geom_bar(stat = "identity", fill = "blue") +
+  coord_flip() +
+  xlab("element") + 
+  ylab("percentage of episodes in which element appears")
+  
 ```
 
 
@@ -458,6 +474,7 @@ tuesdata <- tidytuesdayR::tt_load('2022-07-05') # this could take a minute
 rent <- tuesdata$rent
 
 data(tuesdata)
+
 
 ```
 
