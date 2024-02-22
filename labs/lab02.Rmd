@@ -23,7 +23,9 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 #install.packages("viridis")
 #install.packages("lintr")
 #install.packages("datapasta")
-#install.packages("tidytuesdayR")
+#install.packages("tidytuesday"
+elements_by_episode <- read.csv("C:/Users/agjjo/Downloads/Documents/GitHub/math241/data/elements-by-episode.csv")
+
 
 
 #devtools::install_github("tidyverse/dsbox")
@@ -396,13 +398,9 @@ For this problem, I want you to try to recreate a FiveThirtyEight.com graphic.  
 a. Take a screenshot of the graph, upload it to the same folder on the server where you have saved your lab, and insert the file name below.  Then change the `eval = FALSE` to `eval = TRUE`.
 
 
-```{r, out.width="100%", echo=FALSE, eval = FALSE}
-knitr::include_graphics("C:/Users/agjjo/Zotero/storage/M3RMZ9LG/538_bob_ross_data.pdf")
+```{r, out.width="100%", echo=FALSE, eval = TRUE}
+knitr::include_graphics("C:/Users/agjjo/Downloads/Documents/GitHub/math241/labs/bob_ross_data.png")
 
-ave_elements_ross <- elements_by_episode.df
-
-data() %>% 
-  drop()
 
 ```
 
