@@ -12,6 +12,9 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```{r}
 #Load web scraping library
 library(rvest)
+library(ggplot2)
+library(tidytuesdayR)
+library(tidyverse)
 ```
 
 # Grab Tables from the Web
@@ -40,6 +43,33 @@ champ_table
 Using the same approach, grab the table of Portland's population over time (table 4), and create a simple visualization of the total population count over time.
 
 
+
+```{r}
+
+#Store url
+url <- "https://en.wikipedia.org/wiki/Portland,_Oregon"
+
+## Scrape html and store table
+
+#Grab all the tables and then navigate to the one you wanted.
+tables <- url %>%
+  read_html() %>%
+  html_nodes(css = "table")
+
+#Grab the specific table
+census_table <- html_table(tables[[4]], fill = TRUE)
+census_table
+
+
+census_table %>% 
+  ggplot( aes(x = Census, y = Pop.)) + 
+    geom_point()
+
+```
+
+
+
+
 # Another Example
 
 * Although we saw that we can use `datapasta` to grab these data, let's scrape the [NYTimes.com's College Access Index](https://www.nytimes.com/interactive/2017/05/25/sunday-review/opinion-pell-table.html) table.
@@ -64,7 +94,11 @@ college_access_table2 <- url %>%
   html_node(css = "#opinion-pell-table > div > div.g-item.g-sortable-table > table") %>%
   html_table()
 
-
+#making a representation
+college_access_table2 %>%
+  ggplot( aes(x = `Freshman class`, y = `College Access Index`)) + 
+    geom_point()
+  #want to add size as an indicator of endowment per student
 ```
 
 ## Create a visualization
