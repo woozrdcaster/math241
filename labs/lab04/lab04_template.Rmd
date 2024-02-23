@@ -14,9 +14,38 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```{r}
 # Put all necessary libraries here
 library(tidyverse)
+library(ggplot2)
+library(tidytuesdayR)
+library(readr)
+library(datapasta)
+
+
+#using the libraries
+covid_survey <- read_csv("C:/Users/agjjo/OneDrive/Documents/GitHub/math241/labs/lab04/data/covid-survey.csv")
+View(covid_survey)
 ```
 
 ### Problem 1: COVID survey - interpretation
-
-
+first thing that jumps out to me is that these nursing students do not seem to trust the vaccine
+Look at age * safe: the mid 20's students have the hihgest trust (older/younger rated lower with lower variation)
+the only clear indicator for if someone is queer was the gender question but, its seems like queer(in this case, nonbinary) students were more likely to trust the vaccine
+North american indigenous students had high variability all responses. This makes me think that that grouping on it's own is a poor predictor and if you wanted better info about that population(those populations) you would have to bring in more context
 ### Problem 2: COVID survey - reconstruct
+```{r}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
