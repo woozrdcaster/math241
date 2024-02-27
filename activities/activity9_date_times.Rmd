@@ -6,6 +6,8 @@ date: "2024-02-27"
 
 ```{r, echo = F}
 
+#install.packages("C:/Users/agjjo/Downloads/Documents/GitHub/math241/ggridges_0.5.6.tar.gz")
+
 # load packages
 library(tidyverse)
 library(lubridate)
