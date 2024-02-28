@@ -1,0 +1,28 @@
+{
+    "id": "57EF033F",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1709099743901.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "id": "651df0d5b0fc4764be323fe4039d8dd7",
+        "name": "precip_se_pdx",
+        "title": "precip_se_pdx",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1709099192,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1709099743901,
+    "read_only": false,
+    "read_only_alternatives": []
+}

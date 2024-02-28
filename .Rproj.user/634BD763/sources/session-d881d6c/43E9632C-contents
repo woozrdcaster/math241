@@ -70,7 +70,7 @@ c. January was not so rainy this year, was it?  Let's grab the precipitation dat
 ```{r, eval = FALSE}
 # First fill-in and run to following to determine the
 # datatypeid
-ncdc_datatypes(datasetid = "GHCND",
+blah <- ncdc_datatypes(datasetid = "GHCND",
                stationid = "GHCND:US1ORMT0006")
 
 # Now grab the data using ncdc()
@@ -83,6 +83,8 @@ d.  What is the class of `precip_se_pdx`?  Grab the data frame nested in `precip
 
 #it's empty tho; using NE data instead, also empty; using SW data
 se_pdx_df <- precip_se_pdx[["tbl_df"]]
+
+# look up examples of this packages function
 
 ```
 it's a list

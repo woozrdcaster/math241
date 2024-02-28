@@ -1,0 +1,4 @@
+"0","stations <- ncdc_stations(datasetid = ""GHCND"", "
+"0","                          locationid = ""FIPS:41051"")"
+"0",""
+"0","mult_stations <- stations$data"

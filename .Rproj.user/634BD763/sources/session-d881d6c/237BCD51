@@ -1,0 +1,28 @@
+{
+    "id": "237BCD51",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1709099763325.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "id": "12672e4451bc41e192965cdbaaefac18",
+        "name": "precip_ne_pdx",
+        "title": "precip_ne_pdx",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 7022061171920299363,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1709099763325,
+    "read_only": false,
+    "read_only_alternatives": []
+}
