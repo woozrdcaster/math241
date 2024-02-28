@@ -19,6 +19,7 @@ library(tidytuesdayR)
 library(readr)
 library(datapasta)
 library(dplyr)
+#tinytex::install_tinytex()
 
 #using the libraries
 covid_survey <- read_csv("C:/Users/agjjo/OneDrive/Documents/GitHub/math241/labs/lab04/data/covid-survey.csv")
@@ -48,6 +49,18 @@ covid_cleaned <- covid_cleaned %>%
   rename(...5 = exp_race)
 
 
+<<<<<<< HEAD
+# Relabeling survey responses, this doesn't work but U get the idea
+#covid_cleaned <- covid_cleaned %>%
+  #mutate(exp_race = case_when(
+    #exp_race == 1 ~ "American Indian / Alaskan native",
+    #exp_race == 2 ~ "Asian",
+    #exp_race == 3 ~ "Black / African American",
+    #exp_race == 4 ~ "Native Hawaiian / Other Pacific Islander",
+    #exp_race == 5 ~ "White",
+    #TRUE ~ as.character(exp_race)  # Handling other cases
+  #))
+=======
 # Relabeling survey responses
 covid_cleaned <- covid_cleaned %>%
   mutate(exp_race = case_when(
@@ -57,6 +70,7 @@ covid_cleaned <- covid_cleaned %>%
     '5' == 4 ~ "Native Hawaiian / Other Pacific Islander",
     '5' == 5 ~ "White"
   ))
+
 
 # Showing dimensions of the cleaned data
 dim(covid_cleaned)
