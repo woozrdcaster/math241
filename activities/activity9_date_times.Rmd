@@ -12,6 +12,10 @@ date: "2024-02-27"
 library(tidyverse)
 library(lubridate)
 library(ggridges)
+
+
+#getting data
+
 ```
 
 ## Getting data from the internet, using lubridate, learning a new plot.
