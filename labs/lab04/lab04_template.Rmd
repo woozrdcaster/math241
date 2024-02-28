@@ -36,13 +36,20 @@ North american indigenous students had high variability all responses. This make
 ```{r}
 
 # Creating a function to delete rows with a certain minimum number of NA's
-delete.na <- function(DF, n = 0) {
+delete_na <- function(DF, n = 0) {
   DF[rowSums(is.na(DF)) <= n, ]
 }
 
 # Assuming 'covid_survey' is your data frame
-covid_cleaned <- delete.na(covid_survey, 12)
+covid_cleaned <- delete_na(covid_survey, 12)
 
+
+#trying to rename the columns to not be the survey question instead of "...#" 
+covid_cleaned <- covid_cleaned %>%
+  rename(...5 = exp_race)
+
+
+<<<<<<< HEAD
 # Relabeling survey responses, this doesn't work but U get the idea
 #covid_cleaned <- covid_cleaned %>%
   #mutate(exp_race = case_when(
@@ -53,6 +60,17 @@ covid_cleaned <- delete.na(covid_survey, 12)
     #exp_race == 5 ~ "White",
     #TRUE ~ as.character(exp_race)  # Handling other cases
   #))
+=======
+# Relabeling survey responses
+covid_cleaned <- covid_cleaned %>%
+  mutate(exp_race = case_when(
+    "...5" == 1 ~ "American Indian / Alaskan native",
+    '5' == 2 ~ "Asian",
+    '5' == 3 ~ "Black / African American",
+    '5' == 4 ~ "Native Hawaiian / Other Pacific Islander",
+    '5' == 5 ~ "White"
+  ))
+
 
 # Showing dimensions of the cleaned data
 dim(covid_cleaned)
