@@ -1,0 +1,3 @@
+"0","ggplot(data = oogabooga,"
+"0","  aes(x = date, y = value)"
+"0","  ) + geom_point()"

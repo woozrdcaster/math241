@@ -20,6 +20,7 @@ library(tidyverse)
 library(rvest)
 library(httr)
 library(rnoaa)
+library(httr)
 
 
 ```
@@ -51,6 +52,15 @@ a. First things first, go to [this NOAA website](https://www.ncdc.noaa.gov/cdo-w
 options(noaakey = "OyJVNkFdchuXhDIHjsofsJGGpyKmqStd")
 ```
 
+```{r}
+precip_se_pdx <- ncdc(datasetid = "GHCND", datatypeid = "PRCP",
+                      startdate = "2024-01-01",
+                      enddate = "2024-01-31",
+                      stationid = "GHCND:US1ORMT0006",
+                      limit = 1000)
+
+oogabooga <- precip_se_pdx$data
+```
 
 
 b. From the National Climate Data Center (NCDC) data, use the following code to grab the stations in Multnomah County. How many stations are in Multnomah County?
@@ -70,7 +80,7 @@ c. January was not so rainy this year, was it?  Let's grab the precipitation dat
 ```{r, eval = FALSE}
 # First fill-in and run to following to determine the
 # datatypeid
-ncdc_datatypes(datasetid = "GHCND",
+blah <- ncdc_datatypes(datasetid = "GHCND",
                stationid = "GHCND:US1ORMT0006")
 
 # Now grab the data using ncdc()
@@ -84,15 +94,34 @@ d.  What is the class of `precip_se_pdx`?  Grab the data frame nested in `precip
 #it's empty tho; using NE data instead, also empty; using SW data
 se_pdx_df <- precip_se_pdx[["tbl_df"]]
 
+# look up examples of this packages function
+
 ```
 it's a list
 
 e. Use `ymd_hms()` in the package `lubridate` to wrangle the date column into the correct format.
+```{r} 
+ymd_hms(
+  oogabooga,
+  quiet = FALSE,
+  tz = "UTC",
+  locale = Sys.getlocale("LC_TIME"),
+  truncated = 0
+)
 
-
-
+```
 f. Plot the precipitation data for this site in Portland over time.  Rumor has it that we had only one day where it didn't rain.  Is that true?
 
+```{r}
+ggplot(data = oogabooga,
+  aes(x = date, y = value)
+  ) + geom_point()
+
+
+
+
+```
+it is no true
 
 g. (Bonus) Adapt the code to create a visualization that compares the precipitation data for January over the the last four years.  Do you notice any trend over time?
 
@@ -104,6 +133,18 @@ g. (Bonus) Adapt the code to create a visualization that compares the precipitat
 For this problem I want you to grab web data by either talking to an API directly with `httr` or using an API wrapper.  It must be an API that we have NOT used in class or in Problem 1.
 
 Once you have grabbed the data, do any necessary wrangling to graph it and/or produce some summary statistics. Draw some conclusions from your graph and summary statistics.
+```{r}
+# URL of interest
+url <- "https://www.speedrun.com/api"
+
+# Download available data for Darksouls 
+darksouls <- GET(url, query = list(game.name = "darksouls"))
+
+http_type(darksouls)
+
+```
+
+
 
 ### API Wrapper Suggestions for Problem 2
 
