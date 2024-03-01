@@ -19,8 +19,8 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 library(tidyverse)
 library(rvest)
 library(httr)
-library(rnoaa)
-library(httr)
+#library(rnoaa)
+#library(httr)
 library(jsonlite)
 
 
@@ -122,7 +122,7 @@ ggplot(data = oogabooga,
 
 
 ```
-it is no true
+it is not true
 
 g. (Bonus) Adapt the code to create a visualization that compares the precipitation data for January over the the last four years.  Do you notice any trend over time?
 
@@ -135,18 +135,32 @@ For this problem I want you to grab web data by either talking to an API directl
 
 Once you have grabbed the data, do any necessary wrangling to graph it and/or produce some summary statistics. Draw some conclusions from your graph and summary statistics.
 ```{r}
-# URL of interest
-#url <- "https://www.speedrun.com/api/v1"
 
-# Download available data for Darksouls 
-#undertale <- GET(url, query = list(game.name = "4d73n317"))
 
-#http_type(undertale)
+#json_souls <- fromJSON(txt = "https://www.speedrun.com/api/v1/games?name=darksouls")
 
-json_souls <- fromJSON(txt = "https://www.speedrun.com/api/v1/games?name=darksouls")
+#grabbing data for darksouls remastered
+#darksouls_r <- fromJSON(txt = "https://www.speedrun.com/api/v1/games/lde3woe6")
+
+#grabbing  "runs" 
+#darksouls_r_runs <- fromJSON(txt = "https://www.speedrun.com/api/v1/runs?game=lde3woe6")
+
+#speedrun_categories <- fromJSON(txt = "https://www.speedrun.com/api/v1/categories?game=lde3woe6")
+
+#grabing category codes (this one is "All Bosses")
+#vdo3qoyd_all_bosses <- fromJSON(txt = "https://www.speedrun.com/api/v1/categories/vdo3qoyd")
+
+#grabing category codes (this one is Any%")
+#ndx1pm52_any_percent <- fromJSON(txt = "https://www.speedrun.com/api/v1/categories/ndx1pm52")
+
+#grabing category codes (this one is Any% Force Quit")
+#xd173pzd_anypct_forcequit <- fromJSON(txt = "https://www.speedrun.com/api/v1/categories/xd173pzd")
+
+#grabing category codes (this one is Any% Force Quit")
+#xd173pzd_anypct_forcequit <- fromJSON(txt = "https://www.speedrun.com/api/v1/categories/xd173pzd")
 
 ```
-
+There are only 20 observations in the frame that I ended up with despite the fact that there are 57 observations in the table for Darksouls remastered on the website. But honestly, it was so hard just to find out what the alphanumeric codes that made up so many of the categorical variable levels even stood for that im just happy to have any data from this website
 
 
 ### API Wrapper Suggestions for Problem 2

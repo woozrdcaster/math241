@@ -3,7 +3,7 @@
     "path": "~/GitHub/math241/labs/lab05.Rmd",
     "project_path": "labs/lab05.Rmd",
     "type": "r_markdown",
-    "hash": "3727689249",
+    "hash": "2846099374",
     "contents": "",
     "dirty": false,
     "created": 1709097760431.0,
@@ -12,16 +12,16 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "145,73",
-        "scrollLine": "130",
-        "last_setup_crc32": "770ebff48a3e7b99"
+        "cursorPosition": "159,99",
+        "scrollLine": "143",
+        "last_setup_crc32": "726318be8a3e7b99"
     },
     "folds": "",
-    "lastKnownWriteTime": 1709257038,
+    "lastKnownWriteTime": 1709334404,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1709257038372,
+    "last_content_update": 1709334404307,
     "read_only": false,
     "read_only_alternatives": []
 }
