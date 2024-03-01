@@ -1,0 +1,28 @@
+{
+    "id": "C9E4514E",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1709256874155.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "id": "525e350acd9a454cb3818a75bbd40280",
+        "name": "json_souls",
+        "title": "json_souls",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 6944656221639682373,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1709256874155,
+    "read_only": false,
+    "read_only_alternatives": []
+}

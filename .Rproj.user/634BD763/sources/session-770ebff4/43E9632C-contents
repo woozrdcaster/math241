@@ -21,6 +21,7 @@ library(rvest)
 library(httr)
 library(rnoaa)
 library(httr)
+library(jsonlite)
 
 
 ```
@@ -135,12 +136,14 @@ For this problem I want you to grab web data by either talking to an API directl
 Once you have grabbed the data, do any necessary wrangling to graph it and/or produce some summary statistics. Draw some conclusions from your graph and summary statistics.
 ```{r}
 # URL of interest
-url <- "https://www.speedrun.com/api"
+#url <- "https://www.speedrun.com/api/v1"
 
 # Download available data for Darksouls 
-darksouls <- GET(url, query = list(game.name = "darksouls"))
+#undertale <- GET(url, query = list(game.name = "4d73n317"))
 
-http_type(darksouls)
+#http_type(undertale)
+
+json_souls <- fromJSON(txt = "https://www.speedrun.com/api/v1/games?name=darksouls")
 
 ```
 
