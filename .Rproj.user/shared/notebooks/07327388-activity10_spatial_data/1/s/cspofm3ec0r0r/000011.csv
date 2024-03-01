@@ -1,0 +1,11 @@
+"0","# Load in your Census API key (replace YOUR_API_KEY with your actual key)"
+"0","census_api_key(""5fe0ca3703f6190c4f956fd1f3addb987986d607"", install = TRUE, overwrite = TRUE)"
+"2","Your original .Renviron will be backed up and stored in your R HOME directory if needed.
+"
+"2","Your API key has been stored in your .Renviron and can be accessed by Sys.getenv(""CENSUS_API_KEY""). 
+To use now, restart R or run `readRenviron(""~/.Renviron"")`
+"
+"1","[1]"
+"1"," ""5fe0ca3703f6190c4f956fd1f3addb987986d607"""
+"1","
+"

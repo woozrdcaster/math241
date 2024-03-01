@@ -1,0 +1,325 @@
+"0","# Ensure to install these packages if you haven't already"
+"0","# install.packages(""sf"")"
+"0","# install.packages(""tigris"")"
+"0"," install.packages(""tmap"")"
+"1","# Downloading packages -------------------------------------------------------
+"
+"1","- Downloading tmap from CRAN ...                "
+"1","OK [3.6 Mb in 1.9s]
+"
+"1","- Downloading tmaptools from CRAN ...           "
+"1","OK [168.3 Kb in 0.66s]
+"
+"1","- Downloading lwgeom from CRAN ...              "
+"1","OK [9.6 Mb in 1.9s]
+"
+"1","- Downloading stars from CRAN ...               "
+"1","OK [4 Mb in 0.99s]
+"
+"1","- Downloading abind from CRAN ...               "
+"1","OK [62.4 Kb in 0.55s]
+"
+"1","- Downloading dichromat from CRAN ...           "
+"1","OK [146.4 Kb in 1.3s]
+"
+"1","- Downloading htmlwidgets from CRAN ...         "
+"1","OK [793.9 Kb in 0.56s]
+"
+"1","- Downloading widgetframe from CRAN ...         "
+"1","OK [69.9 Kb in 1.1s]
+"
+"1","- Downloading leaflet from CRAN ...             "
+"1","OK [2.2 Mb in 1.4s]
+"
+"1","- Downloading crosstalk from CRAN ...           "
+"1","OK [403.6 Kb in 0.56s]
+"
+"1","- Downloading leaflet.providers from CRAN ...   "
+"1","OK [43.8 Kb in 0.45s]
+"
+"1","- Downloading leafsync from CRAN ...            "
+"1","OK [827 Kb in 1.4s]
+"
+"1","- Downloading leafem from CRAN ...              "
+"1","OK [3.4 Mb in 1.7s]
+"
+"1","- Downloading geojsonsf from CRAN ...           "
+"1","OK [1.9 Mb in 0.99s]
+"
+"1","- Downloading geometries from CRAN ...          "
+"1","OK [604.4 Kb in 0.77s]
+"
+"1","- Downloading jsonify from CRAN ...             "
+"1","OK [955 Kb in 0.76s]
+"
+"1","- Downloading rapidjsonr from CRAN ...          "
+"1","OK [158 Kb in 0.67s]
+"
+"1","- Downloading sfheaders from CRAN ...           "
+"1","OK [780.8 Kb in 0.77s]
+"
+"1","Successfully downloaded 18 packages in 25 seconds.
+"
+"1","
+"
+"1","The following package(s) will be installed:
+"
+"1","- abind             [1.4-5]
+"
+"1","- crosstalk         [1.2.1]
+"
+"1","- dichromat         [2.0-0.1]
+"
+"1","- geojsonsf         [2.0.3]
+"
+"1","- geometries        [0.2.4]
+"
+"1","- htmlwidgets       [1.6.4]
+"
+"1","- jsonify           [1.2.2]
+"
+"1","- leafem            [0.2.3]
+"
+"1","- leaflet           [2.2.1]
+"
+"1","- leaflet.providers [2.0.0]
+"
+"1","- leafsync          [0.1.0]
+"
+"1","- lwgeom            [0.2-14]
+"
+"1","- rapidjsonr        [1.2.0]
+"
+"1","- raster            [3.6-26]
+"
+"1","- sfheaders         [0.4.4]
+"
+"1","- sp                [2.1-3]
+"
+"1","- stars             [0.6-4]
+"
+"1","- terra             [1.7-71]
+"
+"1","- tmap              [3.3-4]
+"
+"1","- tmaptools         [3.1-1]
+"
+"1","- widgetframe       [0.3.1]
+"
+"1","These packages will be installed into ""~/GitHub/math241/renv/library/R-4.3/x86_64-w64-mingw32"".
+"
+"1","
+"
+"0","Y"
+"1","
+"
+"1","# Installing packages --------------------------------------------------------
+"
+"1","- Installing lwgeom ...                         "
+"1","OK [installed binary and cached in 1.1s]
+"
+"1","- Installing abind ...                          "
+"1","OK [installed binary and cached in 0.47s]
+"
+"1","- Installing stars ...                          "
+"1","OK [installed binary and cached in 0.59s]
+"
+"1","- Installing dichromat ...                      "
+"1","OK [installed binary and cached in 0.47s]
+"
+"1","- Installing tmaptools ...                      "
+"1","OK [installed binary and cached in 0.48s]
+"
+"1","- Installing htmlwidgets ...                    "
+"1","OK [installed binary and cached in 0.47s]
+"
+"1","- Installing widgetframe ...                    "
+"1","OK [installed binary and cached in 0.48s]
+"
+"1","- Installing crosstalk ...                      "
+"1","OK [installed binary and cached in 0.48s]
+"
+"1","- Installing leaflet.providers ...              "
+"1","OK [installed binary and cached in 0.49s]
+"
+"1","- Installing sp ...                             "
+"1","OK [linked from cache]
+"
+"1","- Installing terra ...                          "
+"1","OK [linked from cache]
+"
+"1","- Installing raster ...                         "
+"1","OK [linked from cache]
+"
+"1","- Installing leaflet ...                        "
+"1","OK [installed binary and cached in 0.7s]
+"
+"1","- Installing leafsync ...                       "
+"1","OK [installed binary and cached in 0.48s]
+"
+"1","- Installing geometries ...                     "
+"1","OK [installed binary and cached in 0.49s]
+"
+"1","- Installing rapidjsonr ...                     "
+"1","OK [installed binary and cached in 0.48s]
+"
+"1","- Installing jsonify ...                        "
+"1","OK [installed binary and cached in 0.69s]
+"
+"1","- Installing sfheaders ...                      "
+"1","OK [installed binary and cached in 0.49s]
+"
+"1","- Installing geojsonsf ...                      "
+"1","OK [installed binary and cached in 0.48s]
+"
+"1","- Installing leafem ...                         "
+"1","OK [installed binary and cached in 0.59s]
+"
+"1","- Installing tmap ...                           "
+"1","OK [installed binary and cached in 0.58s]
+"
+"1","Successfully installed 21 packages in 11 seconds.
+"
+"0","# install.packages(""RColorBrewer"")"
+"0","install.packages(""flextable"")"
+"1","# Downloading packages -------------------------------------------------------
+"
+"1","- Downloading flextable from CRAN ...           "
+"1","OK [1.2 Mb in 0.66s]
+"
+"1","- Downloading officer from CRAN ...             "
+"1","OK [1.6 Mb in 0.88s]
+"
+"1","- Downloading gdtools from CRAN ...             "
+"1","OK [2.1 Mb in 0.76s]
+"
+"1","- Downloading gfonts from CRAN ...              "
+"1","OK [2.7 Mb in 0.87s]
+"
+"1","- Downloading shiny from CRAN ...               "
+"1","OK [4.3 Mb in 1.1s]
+"
+"1","- Downloading httpuv from CRAN ...              "
+"1","OK [964.4 Kb in 0.66s]
+"
+"1","- Downloading later from CRAN ...               "
+"1","OK [447.2 Kb in 0.55s]
+"
+"1","- Downloading promises from CRAN ...            "
+"1","OK [1.9 Mb in 0.77s]
+"
+"1","- Downloading xtable from CRAN ...              "
+"1","OK [690.1 Kb in 0.55s]
+"
+"1","- Downloading sourcetools from CRAN ...         "
+"1","OK [373.7 Kb in 0.56s]
+"
+"1","- Downloading commonmark from CRAN ...          "
+"1","OK [138.9 Kb in 0.54s]
+"
+"1","- Downloading fontquiver from CRAN ...          "
+"1","OK [2.2 Mb in 1.5s]
+"
+"1","- Downloading fontBitstreamVera from CRAN ...   "
+"1","OK [681.5 Kb in 1.2s]
+"
+"1","- Downloading fontLiberation from CRAN ...      "
+"1","OK [4.3 Mb in 0.98s]
+"
+"1","Successfully downloaded 14 packages in 13 seconds.
+"
+"1","
+"
+"1","The following package(s) will be installed:
+"
+"1","- commonmark        [1.9.1]
+"
+"1","- flextable         [0.9.4]
+"
+"1","- fontBitstreamVera [0.1.1]
+"
+"1","- fontLiberation    [0.1.0]
+"
+"1","- fontquiver        [0.2.1]
+"
+"1","- gdtools           [0.3.6]
+"
+"1","- gfonts            [0.2.0]
+"
+"1","- httpuv            [1.6.14]
+"
+"1","- later             [1.3.2]
+"
+"1","- officer           [0.6.5]
+"
+"1","- promises          [1.2.1]
+"
+"1","- shiny             [1.8.0]
+"
+"1","- sourcetools       [0.1.7-1]
+"
+"1","- xtable            [1.8-4]
+"
+"1","These packages will be installed into ""~/GitHub/math241/renv/library/R-4.3/x86_64-w64-mingw32"".
+"
+"1","
+"
+"0","Y"
+"1","
+"
+"1","# Installing packages --------------------------------------------------------
+"
+"1","- Installing officer ...                        "
+"1","OK [installed binary and cached in 0.47s]
+"
+"1","- Installing later ...                          "
+"1","OK [installed binary and cached in 0.48s]
+"
+"1","- Installing promises ...                       "
+"1","OK [installed binary and cached in 0.48s]
+"
+"1","- Installing httpuv ...                         "
+"1","OK [installed binary and cached in 0.48s]
+"
+"1","- Installing xtable ...                         "
+"1","OK [installed binary and cached in 0.48s]
+"
+"1","- Installing sourcetools ...                    "
+"1","OK [installed binary and cached in 0.36s]
+"
+"1","- Installing commonmark ...                     "
+"1","OK [installed binary and cached in 0.47s]
+"
+"1","- Installing shiny ...                          "
+"1","OK [installed binary and cached in 0.93s]
+"
+"1","- Installing gfonts ...                         "
+"1","OK [installed binary and cached in 0.69s]
+"
+"1","- Installing fontBitstreamVera ...              "
+"1","OK [installed binary and cached in 0.46s]
+"
+"1","- Installing fontLiberation ...                 "
+"1","OK [installed binary and cached in 0.36s]
+"
+"1","- Installing fontquiver ...                     "
+"1","OK [installed binary and cached in 0.47s]
+"
+"1","- Installing gdtools ...                        "
+"1","OK [installed binary and cached in 0.47s]
+"
+"1","- Installing flextable ...                      "
+"1","OK [installed binary and cached in 0.36s]
+"
+"1","Successfully installed 14 packages in 7.5 seconds.
+"
+"0","# Load necessary libraries"
+"0","library(tidyverse)"
+"0","library(tidycensus)"
+"0","library(flextable)"
+"0","library(sf)"
+"0","library(tigris)"
+"0","library(tmap)"
+"0","library(RColorBrewer)"
+"0",""
+"0",""

@@ -1,0 +1,6 @@
+"0","# Create a choropleth map of median household income"
+"0","tm_shape(or_tracts) +"
+"0","  tm_polygons(col = ""medincome"", style = ""quantile"", palette = ""BuGn"", title = ""Median Household Income"") +"
+"0","  tm_layout(main.title = ""Median Household Income in Multnomah County, 2018-2022"","
+"0","            main.title.position = ""center"","
+"0","            legend.outside = TRUE)"
