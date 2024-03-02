@@ -205,6 +205,33 @@ a. Go to [https://www.reed.edu/ir/success.html](https://www.reed.edu/ir/success.
 
 b. Grab and print out the table that is entitled "GRADUATE SCHOOLS MOST FREQUENTLY ATTENDED BY REED ALUMNI".  Why is this data frame not in a tidy format?
 
+```{r}
+# Load required libraries
+library(rvest)
+
+# Specify the URL of the webpage containing the tables
+url <- "https://www.reed.edu/ir/success.html"
+
+# Read the HTML content from the webpage
+html_content <- read_html(url)
+
+# Scrape the tables using CSS selectors
+tables <- html_nodes(html_content, "table")
+
+# If you know the specific table you want to scrape, you can use indexing (e.g., tables[[1]] for the first table)
+
+# Convert the scraped tables to data frames
+table_data <- lapply(tables, function(x) {
+  html_table(x, fill = TRUE)
+})
+
+# Access the scraped data
+# For example, if you want the first table data
+print(table_data[[1]])
+
+ocupational_dist_alumn <- table_data[[1]]
+grad_schl_freq <- table_data[[2]]
+```
 
 
 c. Wrangle the data into a tidy format. Glimpse the resulting data frame.
