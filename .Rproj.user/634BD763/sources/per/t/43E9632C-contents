@@ -137,27 +137,48 @@ Once you have grabbed the data, do any necessary wrangling to graph it and/or pr
 ```{r}
 
 
-#json_souls <- fromJSON(txt = "https://www.speedrun.com/api/v1/games?name=darksouls")
+json_souls <- fromJSON(txt = "https://www.speedrun.com/api/v1/games?name=darksouls")
 
 #grabbing data for darksouls remastered
-#darksouls_r <- fromJSON(txt = "https://www.speedrun.com/api/v1/games/lde3woe6")
+darksouls_r <- fromJSON(txt = "https://www.speedrun.com/api/v1/games/lde3woe6")
 
 #grabbing  "runs" 
-#darksouls_r_runs <- fromJSON(txt = "https://www.speedrun.com/api/v1/runs?game=lde3woe6")
+darksouls_r_runs <- fromJSON(txt = "https://www.speedrun.com/api/v1/runs?game=lde3woe6")
 
 #speedrun_categories <- fromJSON(txt = "https://www.speedrun.com/api/v1/categories?game=lde3woe6")
 
 #grabing category codes (this one is "All Bosses")
-#vdo3qoyd_all_bosses <- fromJSON(txt = "https://www.speedrun.com/api/v1/categories/vdo3qoyd")
+vdo3qoyd_all_bosses <- fromJSON(txt = "https://www.speedrun.com/api/v1/categories/vdo3qoyd")
 
 #grabing category codes (this one is Any%")
-#ndx1pm52_any_percent <- fromJSON(txt = "https://www.speedrun.com/api/v1/categories/ndx1pm52")
+ndx1pm52_any_percent <- fromJSON(txt = "https://www.speedrun.com/api/v1/categories/ndx1pm52")
 
 #grabing category codes (this one is Any% Force Quit")
-#xd173pzd_anypct_forcequit <- fromJSON(txt = "https://www.speedrun.com/api/v1/categories/xd173pzd")
+xd173pzd_anypct_forcequit <- fromJSON(txt = "https://www.speedrun.com/api/v1/categories/xd173pzd")
 
-#grabing category codes (this one is Any% Force Quit")
-#xd173pzd_anypct_forcequit <- fromJSON(txt = "https://www.speedrun.com/api/v1/categories/xd173pzd")
+#grabing category codes (this one is "No Wrong Warp")
+wdm84w52_no_wrongwrp <- fromJSON(txt = "https://www.speedrun.com/api/v1/categories/wdm84w52")
+
+
+dsr_runs_wrangled <- darksouls_r_runs[["data"]]
+
+dsr_runs_data <- dsr_runs_data %>%
+  mutate(Category = factor(
+    category, levels = c("vdo3qoyd", "ndx1pm52", "xd173pzd", "wdm84w52"), labels = c("all_bosses", "any_pct", "any_pct_forcequit", "no_wrongwrp")),
+    time_ingame = times$ingame_t
+    ) %>%
+  select(time_ingame, Category, date, comment) %>%
+  group_by(Category) %>%
+  summarize(
+    ave_time = mean(time_ingame)
+  )
+
+  ggplot(data = dsr_runs_data, 
+    aes(x = Category, y = time_ingame)
+  ) + 
+  geom_point()
+
+
 
 ```
 There are only 20 observations in the frame that I ended up with despite the fact that there are 57 observations in the table for Darksouls remastered on the website. But honestly, it was so hard just to find out what the alphanumeric codes that made up so many of the categorical variable levels even stood for that im just happy to have any data from this website
@@ -184,6 +205,33 @@ a. Go to [https://www.reed.edu/ir/success.html](https://www.reed.edu/ir/success.
 
 b. Grab and print out the table that is entitled "GRADUATE SCHOOLS MOST FREQUENTLY ATTENDED BY REED ALUMNI".  Why is this data frame not in a tidy format?
 
+```{r}
+# Load required libraries
+library(rvest)
+
+# Specify the URL of the webpage containing the tables
+url <- "https://www.reed.edu/ir/success.html"
+
+# Read the HTML content from the webpage
+html_content <- read_html(url)
+
+# Scrape the tables using CSS selectors
+tables <- html_nodes(html_content, "table")
+
+# If you know the specific table you want to scrape, you can use indexing (e.g., tables[[1]] for the first table)
+
+# Convert the scraped tables to data frames
+table_data <- lapply(tables, function(x) {
+  html_table(x, fill = TRUE)
+})
+
+# Access the scraped data
+# For example, if you want the first table data
+print(table_data[[1]])
+
+ocupational_dist_alumn <- table_data[[1]]
+grad_schl_freq <- table_data[[2]]
+```
 
 
 c. Wrangle the data into a tidy format. Glimpse the resulting data frame.
