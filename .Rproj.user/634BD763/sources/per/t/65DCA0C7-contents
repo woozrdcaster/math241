@@ -78,7 +78,7 @@ head(or_tracts)
 
 Now that you’ve got your spatial data in and wrangled, the next natural step is to map something. There are several functions in R that can be used for mapping. The package we’ll use today is tmap.
 
-The foundation function for mapping in tmap is tm_shape(). You then build on tm_shape() by adding one or more elements, all taking on the form of tm_. Let’s make a choropleth(a what now??) map of median housing values.
+The foundation function for mapping in tmap is tm_shape(). You then build on tm_shape() by adding one or more elements, all taking on the form of tm_. Let’s make a choropleth map of median housing values.
 
 ### Mapping Median Household Income in Multnomah County
 
