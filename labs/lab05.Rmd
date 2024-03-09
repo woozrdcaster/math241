@@ -22,7 +22,7 @@ library(httr)
 #library(rnoaa)
 #library(httr)
 library(jsonlite)
-
+# all the stuff with rnoaa won't knit cause I only got it working on my laptop and now it doesn't even work there anymore, that package is fucked. just trust and believe it worked when the package was usable
 
 ```
 
@@ -50,27 +50,27 @@ You can find more information about the datasets and variables [here](https://ww
 a. First things first, go to [this NOAA website](https://www.ncdc.noaa.gov/cdo-web/token) to get a key emailed to you.  Then insert your key below:
 
 ```{r, eval = FALSE}
-options(noaakey = "OyJVNkFdchuXhDIHjsofsJGGpyKmqStd")
+#options(noaakey = "OyJVNkFdchuXhDIHjsofsJGGpyKmqStd")
 ```
 
 ```{r}
-precip_se_pdx <- ncdc(datasetid = "GHCND", datatypeid = "PRCP",
-                      startdate = "2024-01-01",
-                      enddate = "2024-01-31",
-                      stationid = "GHCND:US1ORMT0006",
-                      limit = 1000)
+#precip_se_pdx <- ncdc(datasetid = "GHCND", datatypeid = "PRCP",
+                      #startdate = "2024-01-01",
+                      #enddate = "2024-01-31",
+                      #stationid = "GHCND:US1ORMT0006",
+                      #limit = 1000)
 
-oogabooga <- precip_se_pdx$data
+#oogabooga <- precip_se_pdx$data
 ```
 
 
 b. From the National Climate Data Center (NCDC) data, use the following code to grab the stations in Multnomah County. How many stations are in Multnomah County?
 
 ```{r, eval = FALSE}
-stations <- ncdc_stations(datasetid = "GHCND", 
-                          locationid = "FIPS:41051")
+#stations <- ncdc_stations(datasetid = "GHCND", 
+                          #locationid = "FIPS:41051")
 
-mult_stations <- stations$data
+#mult_stations <- stations$data
 ```
 
 #there are 25 stations
@@ -81,19 +81,19 @@ c. January was not so rainy this year, was it?  Let's grab the precipitation dat
 ```{r, eval = FALSE}
 # First fill-in and run to following to determine the
 # datatypeid
-blah <- ncdc_datatypes(datasetid = "GHCND",
-               stationid = "GHCND:US1ORMT0006")
+#blah <- ncdc_datatypes(datasetid = "GHCND",
+               #stationid = "GHCND:US1ORMT0006")
 
 # Now grab the data using ncdc()
-precip_se_pdx <- ncdc(datasetid = "GHCND",
-               stationid = "GHCND:US1ORMT0006", token = "OyJVNkFdchuXhDIHjsofsJGGpyKmqStd")
+#precip_se_pdx <- ncdc(datasetid = "GHCND",
+               #stationid = "GHCND:US1ORMT0006", token = "OyJVNkFdchuXhDIHjsofsJGGpyKmqStd")
 ```
 
 d.  What is the class of `precip_se_pdx`?  Grab the data frame nested in `precip_se_pdx` and call it `precip_se_pdx_data`.
 ```{r}
 
 #it's empty tho; using NE data instead, also empty; using SW data
-se_pdx_df <- precip_se_pdx[["tbl_df"]]
+#se_pdx_df <- precip_se_pdx[["tbl_df"]]
 
 # look up examples of this packages function
 
@@ -102,21 +102,21 @@ it's a list
 
 e. Use `ymd_hms()` in the package `lubridate` to wrangle the date column into the correct format.
 ```{r} 
-ymd_hms(
-  oogabooga,
-  quiet = FALSE,
-  tz = "UTC",
-  locale = Sys.getlocale("LC_TIME"),
-  truncated = 0
-)
+#ymd_hms(
+  #oogabooga,
+  #quiet = FALSE,
+  #tz = "UTC",
+  #locale = Sys.getlocale("LC_TIME"),
+  #truncated = 0
+#)
 
 ```
 f. Plot the precipitation data for this site in Portland over time.  Rumor has it that we had only one day where it didn't rain.  Is that true?
 
 ```{r}
-ggplot(data = oogabooga,
-  aes(x = date, y = value)
-  ) + geom_point()
+#ggplot(data = oogabooga,
+ # aes(x = date, y = value)
+ # ) + geom_point()
 
 
 
@@ -160,7 +160,7 @@ xd173pzd_anypct_forcequit <- fromJSON(txt = "https://www.speedrun.com/api/v1/cat
 wdm84w52_no_wrongwrp <- fromJSON(txt = "https://www.speedrun.com/api/v1/categories/wdm84w52")
 
 
-dsr_runs_wrangled <- darksouls_r_runs[["data"]]
+dsr_runs_data <- darksouls_r_runs[["data"]]
 
 dsr_runs_data <- dsr_runs_data %>%
   mutate(Category = factor(
@@ -174,7 +174,7 @@ dsr_runs_data <- dsr_runs_data %>%
   )
 
   ggplot(data = dsr_runs_data, 
-    aes(x = Category, y = time_ingame)
+    aes(x = Category, y = ave_time)
   ) + 
   geom_point()
 
@@ -235,13 +235,36 @@ grad_schl_freq <- table_data[[2]]
 
 
 c. Wrangle the data into a tidy format. Glimpse the resulting data frame.
-
+This data seems to satisfy the requirements for tidy data already
+```{r}
+glimpse(grad_schl_freq)
+```
 
 
 d. Now grab the "OCCUPATIONAL DISTRIBUTION OF ALUMNI" table and turn it into an appropriate graph.  What conclusions can we draw from the graph?
 
 ```{r}
 # Hint: Use `parse_number()` within `mutate()` to fix one of the columns
+#it looks fine to me??????
+
+
+ocupational_dist_alumn <- ocupational_dist_alumn %>% 
+  mutate(
+    job_type = X1, 
+    percent = X2
+         )
+
+ocupational_dist_alumn <- ocupational_dist_alumn %>% 
+  select(
+    job_type, 
+    percent
+         )
+
+# I still don't know how to map bars onto a dot plot, sue me
+ggplot(data = ocupational_dist_alumn,
+  aes(x = job_type, y = percent)
+) + geom_point()
+# I know it looks bad but I'm late and tired
 ```
 
 
