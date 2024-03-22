@@ -1,4 +1,0 @@
-"0","readr::read_csv(""week18_dallas_animals.csv"")%>%"
-"0","  head(n = 5)"
-"2","Error: 'week18_dallas_animals.csv' does not exist in current working directory ('C:/Users/agjjo/OneDrive/Documents/GitHub/math241').
-"

@@ -1,2 +1,0 @@
-"0","readr::read_csv(""data/week18_dallas_animals.csv"") %>%"
-"0","  head(n = 5)"

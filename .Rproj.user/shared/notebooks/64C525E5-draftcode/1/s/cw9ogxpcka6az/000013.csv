@@ -1,8 +1,0 @@
-"0",""
-"0","#Graphing histograms, y scale is messed up because stray has many more observations than other groups"
-"0","ggplot(dog_duration, aes(x = duration)) +"
-"0","  geom_histogram() +"
-"0","  facet_wrap(~intake_type) +"
-"0","  labs(x = ""Intake Type"", "
-"0","       y = ""Duration of Stay"", "
-"0","       title = ""Shelter Intake Duration Distrib in Dallas Animal Shelters in 2016 and 2017"")"

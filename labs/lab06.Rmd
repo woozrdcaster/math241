@@ -63,7 +63,7 @@ biketown_map <- leaflet() %>%
   addTiles() %>% 
   addMarkers(data = biketown_data, lng = ~StartLongitude, lat = ~StartLatitude)
 
-biketown_map
+#biketown_map
 
 ```
 
@@ -71,14 +71,126 @@ c. Using the `lubridate` package, create a variable, `month`, indicating the mon
 
 Add this variable to your interactive map using color.  Make sure to include a legend and be mindful of your color palette choice.  Do ride locations vary by months of the year?
 
+```{r, EVAL = FALSE}
+
+
+# Convert StartDate column to standard date-time format
+biketown_data <- biketown_data %>%
+  mutate(
+    StartDate = mdy(StartDate)  
+  )
+
+# Now create the month variable and a season variable
+biketown_data <- biketown_data %>%
+  mutate(
+    month = month(StartDate)
+  ) %>%
+   mutate(
+    month = month(StartDate),
+    season = case_when(
+      month %in% c(12, 1, 2) ~ "Winter",
+      month %in% c(3, 4, 5) ~ "Spring",
+      month %in% c(6, 7, 8) ~ "Summer",
+      month %in% c(9, 10, 11) ~ "Fall"
+    )
+  )
+
+
+#
+biketown_map <- leaflet() %>% 
+  addTiles() %>% 
+  addCircleMarkers(
+    data = biketown_data, 
+    lng = ~StartLongitude, 
+    lat = ~StartLatitude
+   # ,color = season  --- this refused to work and said the season object did not exist despite it appearing in the data frame
+  )
+
+
+```
+
 ### Problem 2: Choropleth Maps
 
 For this problem, I want you to practice creating choropleth maps.  Let's grab some data using `tidycensus`.  Remember that you will have to set up an [API key](https://api.census.gov/data/key_signup.html).
 
-```{r, eval = FALSE}
-api_key <- "insert key"
+```{r, eval = FALSE, install = TRUE}
+api_key <- "5fe0ca3703f6190c4f956fd1f3addb987986d607"
 ```
 
 a. Let's grab data on the median gross rent (`B25064_001`) from the American Community Survey for Multnomah county, Oregon.  I want you to do data pulls at three geography resolutions: county subdivision, tract, and block group.
 
+
+```{r, eval = F}
+#looking at variables reall quick
+v21 <- load_variables(2021, "acs5", cache = TRUE)
+View(v21)
+```
+
+
+```{r}
+#pulling county level data
+mult_county <- get_acs(geography = "county", 
+              county = "multnomah",
+              variables = c(median_gross_rent = "B25064_001"), 
+              geometry = TRUE,
+              state = "OR",
+              cache_table = TRUE)
+
+#pulling tract level data
+mult_tracts <- get_acs(geography = "tract", 
+              county = "multnomah",
+              variables = c(median_gross_rent = "B25064_001"), 
+              geometry = TRUE,
+              state = "OR",
+              cache_table = TRUE)
+
+#pulling block group level data
+mult_blocks <- get_acs(geography = "block group", 
+              county = "multnomah",
+              variables = c(median_gross_rent = "B25064_001"), 
+              geometry = TRUE,
+              state = "OR",
+              cache_table = TRUE)
+
+```
+
+
+
 b. Create three choropleth maps of gross rent, one for each geography resolution.  What information can we glean from these maps?  Also, which resolution seems most useful for this variable?  Justify your answer.
+
+```{r}
+#county level map
+ggplot(data = mult_county, aes(geometry = geometry, fill = estimate)) +
+  geom_sf() +
+  coord_sf()
+
+#tract level map
+ggplot(data = mult_tracts, aes(geometry = geometry, fill = estimate)) +
+  geom_sf() +
+  coord_sf()
+
+#block-group level map
+ggplot(data = mult_blocks, aes(geometry = geometry, fill = estimate)) +
+  geom_sf() +
+  coord_sf()
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
