@@ -1,0 +1,3 @@
+"0","#looking at variable reall quick"
+"0","v21 <- load_variables(2021, ""acs5"", cache = TRUE)"
+"0","View(v21)"

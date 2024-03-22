@@ -1,0 +1,14 @@
+"0","# Convert StartDate column to standard date-time format
+biketown_data <- biketown_data %>%
+  mutate(
+    StartDate = mdy(StartDate, orders = ""ymd"")  
+  )
+"
+"1","[1m[33mError[39m in `mutate()`:[22m
+[38;5;254m[36mℹ[38;5;254m In argument: `StartDate = mdy(StartDate, orders = ""ymd"")`.[39m
+[1mCaused by error in `.parse_xxx()`:[22m
+[33m![39m formal argument ""orders"" matched by multiple actual arguments
+Backtrace:
+[90m 1. [39mbiketown_data %>% mutate(StartDate = mdy(StartDate, orders = ""ymd""))
+[90m 9. [39m[1mlubridate[22m::mdy(StartDate, orders = ""ymd"")
+"
