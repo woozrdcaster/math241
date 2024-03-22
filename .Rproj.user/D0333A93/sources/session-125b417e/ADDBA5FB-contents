@@ -3,7 +3,7 @@ title: "Lab 6"
 author: "Insert Name"
 date: "Math 241, Week 8"
 output:
-  pdf_document
+  html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -57,7 +57,7 @@ biketown_data <- bind_rows(readr::read_csv("https://s3.amazonaws.com/biketown-tr
 
 b. Create an interactive map of the start point of the rides using the `leaflet` package.  Make sure to include a legend and a title.  What do you notice about the distribution of rides?
 
-```{r}
+```{r, EVAL = FALSE}
 
 biketown_map <- leaflet() %>% 
   addTiles() %>% 
