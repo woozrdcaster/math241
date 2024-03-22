@@ -63,7 +63,7 @@ biketown_map <- leaflet() %>%
   addTiles() %>% 
   addMarkers(data = biketown_data, lng = ~StartLongitude, lat = ~StartLatitude)
 
-biketown_map
+#biketown_map
 
 ```
 
