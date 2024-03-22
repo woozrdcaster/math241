@@ -83,8 +83,10 @@ biketown_data <- biketown_data %>%
 # Now create the month variable
 biketown_data <- biketown_data %>%
   mutate(
-    month_variable = month(StartDate)
+    month = month(StartDate)
   )
+
+
 
 ```
 
