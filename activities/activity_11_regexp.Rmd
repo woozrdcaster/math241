@@ -10,9 +10,12 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
 ```{r}
+install.packages("mdsr")
+install.packages("stringr")
 #Load tidyverse
 library(tidyverse)
 library(mdsr)
+library(stringr)
 ```
 
 
