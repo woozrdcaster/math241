@@ -63,13 +63,21 @@ biketown_map <- leaflet() %>%
   addTiles() %>% 
   addMarkers(data = biketown_data, lng = ~StartLongitude, lat = ~StartLatitude)
 
-biketown_map
 
 ```
 
 c. Using the `lubridate` package, create a variable, `month`, indicating the month of each variable.
 
 Add this variable to your interactive map using color.  Make sure to include a legend and be mindful of your color palette choice.  Do ride locations vary by months of the year?
+
+```{r}
+
+#creating variable
+
+
+
+```
+
 
 ### Problem 2: Choropleth Maps
 

@@ -1,0 +1,5 @@
+"0",""
+"0","biketown_map <- leaflet() %>% "
+"0","  addTiles() %>% "
+"0","  addMarkers(data = biketown_data, lng = ~StartLongitude, lat = ~StartLatitude)"
+"2","Warning: Data contains 255 rows with either missing or invalid lat/lon values and will be ignored"
