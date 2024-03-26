@@ -3,7 +3,7 @@
     "path": "~/GitHub/math241/activities/activity13-gganimate.qmd",
     "project_path": "activities/activity13-gganimate.qmd",
     "type": "quarto_markdown",
-    "hash": "2345029166",
+    "hash": "3336239785",
     "contents": "",
     "dirty": false,
     "created": 1711491579057.0,
@@ -15,18 +15,18 @@
         "chunk_output_type": "console",
         "source_window_id": "",
         "Source": "Source",
-        "docOutlineVisible": "1",
+        "docOutlineVisible": "0",
         "rmdVisualCollapsedChunks": "",
         "rmdVisualModeLocation": "942:1608",
-        "cursorPosition": "26,19",
-        "scrollLine": "0"
+        "cursorPosition": "132,28",
+        "scrollLine": "122"
     },
     "folds": "",
-    "lastKnownWriteTime": 1711494693,
+    "lastKnownWriteTime": 1711496123,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1711494693843,
+    "last_content_update": 1711496123637,
     "read_only": false,
     "read_only_alternatives": []
 }

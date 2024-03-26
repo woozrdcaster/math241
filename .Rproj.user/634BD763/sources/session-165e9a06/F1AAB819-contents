@@ -68,11 +68,18 @@ freedom_ranked <- freedom %>%
 #| label: simple-line-plot
 #| eval: false
 
-freedom_ranked %>%
-  filter(country = "Georgia") %>% 
-  ggplot(
+#paring down the data to Georgia
+freedom_ranked_georgia <- freedom_ranked %>%
+  filter(country == "Georgia")
+
+#creating a static plot of civil liberties over time
+  georgia_plot <- ggplot(data = freedom_ranked_georgia,
     aes(x = year, y = civil_liberty)
   ) + geom_line()
+  
+#adding interactivity
+georgia_anime <- georgia_plot +
+  transition_reveal(year)
 
 ```
 
@@ -100,7 +107,7 @@ freedom_to_plot <- freedom %>%
   filter(country %in% countries_to_plot) %>%
   drop_na()
 
-freedom_ranked <- freedom %>%
+freedom_ranked <- freedom_to_plot %>%
   select(country, contains("cl_")) %>%
   pivot_longer(
     cols = -country,
@@ -122,6 +129,11 @@ freedom_ranked <- freedom %>%
 #| eval: false
 
 # add code here
+
+ggplot(data = freedom_ranked,
+  aes(x = rank, y = )
+)
+
 
 # hint: to label each bar with country name, you can use 
 
