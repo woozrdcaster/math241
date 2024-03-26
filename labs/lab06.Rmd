@@ -56,6 +56,13 @@ biketown_data <- bind_rows(readr::read_csv("https://s3.amazonaws.com/biketown-tr
 ```
 
 b. Create an interactive map of the start point of the rides using the `leaflet` package.  Make sure to include a legend and a title.  What do you notice about the distribution of rides?
+```{r}
+biketown_data %>% 
+  leaflet() %>%
+  addTiles() %>%
+  addCircleMarkers(lng = ~StartLongitude, lat = ~StartLatitude)
+```
+
 
 ```{r, EVAL = FALSE}
 
