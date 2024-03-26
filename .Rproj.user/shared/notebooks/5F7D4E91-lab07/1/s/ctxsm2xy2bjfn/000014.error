@@ -1,0 +1,1 @@
+{"frames":[{"func":"freedom_ranked %>% filter(country = \"Georgia\") %>% ggplot(aes(x = year, \n    y = civil_liberty))","file":"","line_number":0,"end_line_number":0,"character_number":0,"end_character_number":0}],"message":"Error in ggplot(., aes(x = year, y = civil_liberty)) : \n  could not find function \"ggplot\"\n"}

@@ -1,27 +1,27 @@
 {
-    "id": "F9146F3E",
-    "path": "~/GitHub/math241/labs/lab06.Rmd",
-    "project_path": "labs/lab06.Rmd",
+    "id": "B5936122",
+    "path": "~/GitHub/math241/labs/lab07.Rmd",
+    "project_path": "labs/lab07.Rmd",
     "type": "r_markdown",
-    "hash": "2286399035",
+    "hash": "236848654",
     "contents": "",
     "dirty": false,
-    "created": 1710890209687.0,
+    "created": 1711491102211.0,
     "source_on_save": false,
     "relative_order": 2,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "65,1",
-        "scrollLine": "56",
-        "last_setup_crc32": ""
+        "last_setup_crc32": "697415788a3e7b99",
+        "cursorPosition": "19,0",
+        "scrollLine": "16"
     },
     "folds": "",
-    "lastKnownWriteTime": 1711145444,
+    "lastKnownWriteTime": 1711494265,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1711145444190,
+    "last_content_update": 1711494265294,
     "read_only": false,
     "read_only_alternatives": []
 }
