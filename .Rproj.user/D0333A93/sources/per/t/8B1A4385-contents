@@ -15,7 +15,11 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
 ```{r}
+<<<<<<< HEAD
 #install.packages("tidytextY")
+=======
+install.packages("tidytext")
+>>>>>>> 015f930b6ee0c7181d8119ac52b908846aa5d895
 
 # Put all necessary libraries here
 library(tidyverse)
