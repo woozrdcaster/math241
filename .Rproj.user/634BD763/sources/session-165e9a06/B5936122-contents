@@ -15,11 +15,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
 ```{r}
-<<<<<<< HEAD
-#install.packages("tidytextY")
-=======
 install.packages("tidytext")
->>>>>>> 015f930b6ee0c7181d8119ac52b908846aa5d895
 
 # Put all necessary libraries here
 library(tidyverse)
@@ -55,7 +51,6 @@ lexicon_nrc()
 1. Load the `babynames` dataset, which contains yearly information on the frequency of baby names by sex and is provided by the US Social Security Administration.  It includes all names with at least 5 uses per year per sex. In this problem, we are going to practice pattern matching!
 
 ```{r}
-#install.packages("babynames")
 library(babynames)
 data("babynames")
 #?babynames
