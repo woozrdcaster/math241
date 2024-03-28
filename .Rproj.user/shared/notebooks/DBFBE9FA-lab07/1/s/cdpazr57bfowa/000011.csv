@@ -1,0 +1,31 @@
+"0","install.packages(""babynames"")"
+"1","# Downloading packages -------------------------------------------------------
+"
+"1","- Downloading babynames from CRAN ...           "
+"1","OK [5.3 Mb in 4.4s]
+"
+"1","Successfully downloaded 1 package in 4.5 seconds.
+"
+"1","
+"
+"1","The following package(s) will be installed:
+"
+"1","- babynames [1.0.1]
+"
+"1","These packages will be installed into ""~/GitHub/math241/renv/library/R-4.3/x86_64-w64-mingw32"".
+"
+"1","
+"
+"0","Y"
+"1","
+"
+"1","# Installing packages --------------------------------------------------------
+"
+"1","- Installing babynames ...                      "
+"1","OK [installed binary and cached in 0.25s]
+"
+"1","Successfully installed 1 package in 0.29 seconds.
+"
+"0","library(babynames)"
+"0","data(""babynames"")"
+"0","#?babynames"

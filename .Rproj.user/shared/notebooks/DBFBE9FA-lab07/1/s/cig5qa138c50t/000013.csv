@@ -1,0 +1,150 @@
+"0","install.packages(""tidytext"")"
+"1","# Downloading packages -------------------------------------------------------
+"
+"1","- Downloading tidytext from CRAN ...            "
+"1","OK [2.9 Mb in 0.76s]
+"
+"1","- Downloading janeaustenr from CRAN ...         "
+"1","OK [1.6 Mb in 1.1s]
+"
+"1","- Downloading tokenizers from CRAN ...          "
+"1","OK [959 Kb in 0.67s]
+"
+"1","- Downloading SnowballC from CRAN ...           "
+"1","OK [353.6 Kb in 1.0s]
+"
+"1","Successfully downloaded 4 packages in 7.3 seconds.
+"
+"1","
+"
+"1","The following package(s) will be installed:
+"
+"1","- janeaustenr [1.0.0]
+"
+"1","- SnowballC   [0.7.1]
+"
+"1","- tidytext    [0.4.1]
+"
+"1","- tokenizers  [0.3.0]
+"
+"1","These packages will be installed into ""~/GitHub/math241/renv/library/R-4.3/x86_64-w64-mingw32"".
+"
+"1","
+"
+"0","Y"
+"1","
+"
+"1","# Installing packages --------------------------------------------------------
+"
+"1","- Installing janeaustenr ...                    "
+"1","OK [installed binary and cached in 0.25s]
+"
+"1","- Installing SnowballC ...                      "
+"1","OK [installed binary and cached in 0.26s]
+"
+"1","- Installing tokenizers ...                     "
+"1","OK [installed binary and cached in 0.25s]
+"
+"1","- Installing tidytext ...                       "
+"1","OK [installed binary and cached in 0.36s]
+"
+"1","Successfully installed 4 packages in 1.2 seconds.
+"
+"0","# Put all necessary libraries here"
+"0","library(tidyverse)"
+"0","library(tidytext)"
+"0",""
+"0","# Ensure the textdata package is installed"
+"0","if (!requireNamespace(""textdata"", quietly = TRUE)) {"
+"0","  install.packages(""textdata"")"
+"0","}"
+"1","# Downloading packages -------------------------------------------------------
+"
+"1","- Downloading textdata from CRAN ...            "
+"1","OK [491.2 Kb in 1.4s]
+"
+"1","Successfully downloaded 1 package in 1.8 seconds.
+"
+"1","
+"
+"1","The following package(s) will be installed:
+"
+"1","- textdata [0.4.4]
+"
+"1","These packages will be installed into ""~/GitHub/math241/renv/library/R-4.3/x86_64-w64-mingw32"".
+"
+"1","
+"
+"0","Y"
+"1","
+"
+"1","# Installing packages --------------------------------------------------------
+"
+"1","- Installing textdata ...                       "
+"1","OK [installed binary and cached in 0.24s]
+"
+"1","Successfully installed 1 package in 0.28 seconds.
+"
+"0","# Load the textdata package"
+"0","library(textdata)"
+"0",""
+"0","# Before knitting your document one last time, you will have to download the AFINN lexicon explicitly"
+"0","lexicon_afinn()"
+"1","Do you want to download:
+"
+"1"," "
+"1","Name:"
+"1"," "
+"1","AFINN-111"
+"1"," "
+"1","
+"
+"1"," "
+"1","URL:"
+"1"," "
+"1","http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010"
+"1"," "
+"1","
+"
+"1"," "
+"1","License:"
+"1"," "
+"1","Open Database License (ODbL) v1.0"
+"1"," "
+"1","
+"
+"1"," "
+"1","Size:"
+"1"," "
+"1","78 KB (cleaned 59 KB)"
+"1"," "
+"1","
+"
+"1"," "
+"1","Download mechanism:"
+"1"," "
+"1","https"
+"1"," "
+"1","
+"
+"1",""
+"1","
+"
+"1","1: Yes"
+"1","
+"
+"1","2: No"
+"1","
+"
+"1",""
+"1","
+"
+"0","1"
+"2","trying URL 'http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/6010/zip/imm6010.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 16227 bytes (15 KB)
+"
+"2","downloaded 15 KB
+
+"
