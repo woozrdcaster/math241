@@ -1,0 +1,8 @@
+"0",""
+"0",""
+"0",""
+"0","# Barplot"
+"0","tidy_wild_nostop %>%"
+"0","  ggplot(aes(y = fct_reorder(word, n), x = n, fill = n)) +"
+"0","  geom_col() +"
+"0","  guides(fill = FALSE)"
