@@ -1,0 +1,7 @@
+"0",""
+"0","tidy_wild_nostop <- tidy_wild %>%"
+"0","  anti_join(stop_words) %>%"
+"0","  count(word, sort = TRUE) %>%"
+"0","  top_n(20)"
+"0",""
+"0","tidy_wild_nostop"
