@@ -1,0 +1,8 @@
+"0","#taking a thousand boostrap samples"
+"0","bootstrap_means <- NHANES %>% "
+"0","  rep_sample_n(size = nrow(NHANES), replace = TRUE, reps = 1000) %>% # to note size = original sample size"
+"0","  group_by(replicate) %>% # and with replacement"
+"0","  summarize(x_bar = mean(SleepHrsNight, na.rm=T)) "
+"0",""
+"0","bootstrap_means %>%"
+"0","  slice_head(n = 10)"

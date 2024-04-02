@@ -1,0 +1,3 @@
+"0","#finding the sample mean"
+"0","samp_mean <- NHANES %>% summarize(m = mean(SleepHrsNight, na.rm = T))"
+"0","samp_mean"

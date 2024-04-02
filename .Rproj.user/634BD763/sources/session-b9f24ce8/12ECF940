@@ -1,0 +1,28 @@
+{
+    "id": "12ECF940",
+    "path": "~/GitHub/math241/activities/bootstrapping_practice.Rmd",
+    "project_path": "activities/bootstrapping_practice.Rmd",
+    "type": "r_markdown",
+    "hash": "2073670337",
+    "contents": "",
+    "dirty": false,
+    "created": 1712098258946.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "140,56",
+        "scrollLine": "126",
+        "last_setup_crc32": "b9f24ce8bb338d19"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1712100328,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1712100328094,
+    "read_only": false,
+    "read_only_alternatives": []
+}

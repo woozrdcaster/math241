@@ -1,0 +1,5 @@
+"0","#visualizing the sample data"
+"0","ggplot(data = NHANES, aes(x = SleepHrsNight)) +"
+"0","  geom_histogram(binwidth = 1) + geom_vline(xintercept = samp_mean$m, color = 'darkred') +"
+"0","  labs(x = 'Daily sleep (in hours)', y = 'Count',"
+"0","       title = 'Hours of sleep per night in the sample')"
