@@ -1,0 +1,31 @@
+{
+    "id": "D7410DB0",
+    "path": "~/GitHub/math241/activities/activity-15-mlr.qmd",
+    "project_path": "activities/activity-15-mlr.qmd",
+    "type": "quarto_markdown",
+    "hash": "2298665377",
+    "contents": "",
+    "dirty": false,
+    "created": 1712272866591.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "rmdVisualMode": "false",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "2:0",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "cursorPosition": "65,4",
+        "scrollLine": "55"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1712273764,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1712273764414,
+    "read_only": false,
+    "read_only_alternatives": []
+}
