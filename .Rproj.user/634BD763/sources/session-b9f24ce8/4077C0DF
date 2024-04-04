@@ -1,0 +1,31 @@
+{
+    "id": "4077C0DF",
+    "path": "~/GitHub/math241/activities/activity-14-bootstrap.qmd",
+    "project_path": "activities/activity-14-bootstrap.qmd",
+    "type": "quarto_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": true,
+    "created": 1712100599916.0,
+    "source_on_save": false,
+    "relative_order": 8,
+    "properties": {
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "cursorPosition": "90,211",
+        "scrollLine": "86",
+        "rmdVisualModeLocation": "2:0",
+        "rmdVisualCollapsedChunks": ""
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1712100877,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1712101616391,
+    "read_only": false,
+    "read_only_alternatives": []
+}

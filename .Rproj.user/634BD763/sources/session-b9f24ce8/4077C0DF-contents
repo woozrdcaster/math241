@@ -48,12 +48,48 @@ glimpse(abb)
 Use these data and the tools we've learned in this class to come up with your best guess for what you would expect to pay (i.e. true price) for an Airbnb in Portland (June 2022).
 
 ```{r}
-#| label: take-a-guess
+#| label: take-a-guess (uh.. like $150 ??)
 
 # add code here
+
+#Getting the point estimate (observed statistic)
+abb_x_bar <- abb %>% 
+  specify(response = ppg) %>% 
+  calculate(stat = "mean")
+
+abb_x_bar
+#the real point estimate is ~$76.59
 ```
 
+```{r}
+#Getting the bootstrap distribution
+abb_boot_dis <- abb %>% 
+  specify(response = ppg) %>% 
+  generate(reps = 1000, type = "bootstrap") %>% 
+  calculate(stat = "mean")
+abb_boot_dis
+visualize(abb_boot_dis)
+
+
+```
+
+```{r}
+
+#Confidence Interval, Standard Error method
+abb_se_ci <- abb_boot_dis %>% 
+  get_confidence_interval(type = "se", point_estimate = abb_x_bar)
+visualize(abb_boot_dis) + 
+  shade_confidence_interval(endpoints = abb_se_ci)
+
+
+
+```
+
+
+
 Do you think your guess is correct?
+Well, I am 95% confident that in any given sample my CI would capture the true average cost per guest of air bnbs in portanld. In this example my bounds are: ~$62.75 & ~$90.42. which contain my original estimate
+
 
 -   If you want to estimate a population parameter, do you prefer to report a range of values the parameter might be in, or a single value?
 
