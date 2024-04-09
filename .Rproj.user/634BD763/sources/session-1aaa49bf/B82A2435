@@ -1,0 +1,31 @@
+{
+    "id": "B82A2435",
+    "path": "~/GitHub/math241/activities/activity-16-logistic-regression.qmd",
+    "project_path": "activities/activity-16-logistic-regression.qmd",
+    "type": "quarto_markdown",
+    "hash": "3237248717",
+    "contents": "",
+    "dirty": false,
+    "created": 1712702350352.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "2:0",
+        "cursorPosition": "80,44",
+        "scrollLine": "75"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1712703443,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1712703443594,
+    "read_only": false,
+    "read_only_alternatives": []
+}

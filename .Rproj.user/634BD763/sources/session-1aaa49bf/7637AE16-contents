@@ -1,0 +1,43 @@
+---
+title: "Prediction practice"
+author: "Evi_et_al"
+date: "2024-04-09"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#call packages here
+library(yardstick)
+library(tidymodels)
+library(tidycensus)
+```
+
+
+```{r cars}
+summary(cars)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

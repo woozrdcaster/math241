@@ -1,0 +1,3 @@
+"0","ggplot(data = email,"
+"0","  aes(x = exclaim_mess, y = spam)"
+"0",") + geom_density()"
