@@ -1,0 +1,6 @@
+"0","#finding the bootstrap distribution"
+"0","bootstrap_means %>%"
+"0","  ggplot(aes(x=x_bar)) + "
+"0","  geom_histogram() + geom_vline(xintercept = mean(bootstrap_means$x_bar), color = 'darkred') +"
+"0","  labs(x = 'Bootstrap means', y = 'Count',"
+"0","       title = 'Bootstrap sampling distribution')"

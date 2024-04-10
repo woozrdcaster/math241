@@ -1,0 +1,5 @@
+"0","#Standard Error method"
+"0","stats <- stats  %>%"
+"0","  mutate(lower_bound = avg_sleep - 2*std_err_sleep,"
+"0","         upper_bound = avg_sleep + 2*std_err_sleep)"
+"0","stats"

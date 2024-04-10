@@ -1,0 +1,7 @@
+"0",""
+"0","#Confidence Interval, Standard Error method"
+"0","abb_se_ci <- abb_boot_dis %>% "
+"0","  get_confidence_interval(type = ""se"", point_estimate = abb_x_bar)"
+"2","[38;5;254mUsing `level = 0.95` to compute confidence interval.[39m"
+"0","visualize(abb_boot_dis) + "
+"0","  shade_confidence_interval(endpoints = abb_se_ci)"

@@ -1,0 +1,7 @@
+"0","#percentile method"
+"0","q <- bootstrap_means %>%"
+"0","  summarize("
+"0","    lower_bound = quantile(x_bar, probs = c(.025)),"
+"0","    upper_bound = quantile(x_bar, probs = c(.975))"
+"0","  )"
+"0","q"

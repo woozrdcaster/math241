@@ -1,0 +1,5 @@
+"0","#finding mean/SE of the bootstrap sampling distribution"
+"0","stats <- bootstrap_means %>%"
+"0","  summarize(avg_sleep = mean(x_bar),"
+"0","            std_err_sleep = sd(x_bar))"
+"0","stats"

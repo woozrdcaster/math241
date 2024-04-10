@@ -1,0 +1,6 @@
+"0",""
+"0","exclamation_lin <- lm(spam ~ exclaim_mess, data = email)"
+"2","Warning: using type = ""numeric"" with a factor response will be ignored"
+"2","Warning: ‘-’ not meaningful for factors"
+"0","broom::tidy(exclamation_lin)"
+"2","Warning: ‘^’ not meaningful for factors"

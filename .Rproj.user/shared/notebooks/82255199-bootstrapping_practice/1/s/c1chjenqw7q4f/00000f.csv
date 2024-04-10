@@ -1,0 +1,4 @@
+"0","#taking a single bootstrap sample -> sample mean"
+"0","NHANES %>% "
+"0","  rep_sample_n(size = nrow(NHANES), replace = TRUE, reps = 1) %>%"
+"0","  summarize(m = mean(SleepHrsNight, na.rm=T))"

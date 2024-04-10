@@ -1,0 +1,7 @@
+"0",""
+"0","#visualizing"
+"0","ggplot(data=bootstrap_means, aes(x=x_bar)) + "
+"0","  geom_histogram() +"
+"0","  geom_vline(xintercept = stats$lower_bound, color = 'blue') +"
+"0","   geom_vline(xintercept = stats$upper_bound, color = 'blue')"
+"0",""
