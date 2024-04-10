@@ -1,0 +1,6 @@
+"0",""
+"0","# Check for names containing numbers"
+"0","names_with_numeric <- babynames[grepl(""one|two|three|four|five|six|seven|eight|nine"", babynames$name), ]"
+"0",""
+"0","# View the first few rows of the filtered dataset"
+"0","head(names_with_numeric)"
